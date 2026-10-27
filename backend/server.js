@@ -9,11 +9,17 @@ const interviewRoutes = require("./routes/interviewRoutes");
 const app = express();
 
 // Middleware
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
+    origin: [
+      "https://ai-mock-interview-eta-gules.vercel.app",
+      "http://localhost:3000",
+    ],
+    credentials: true,
   })
 );
+
 
 app.use(express.json());
 app.use((req, res, next) => {
