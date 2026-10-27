@@ -84,7 +84,7 @@ useEffect(() => {
   async function fetchInterviews() {
     try {
       const response = await authFetch(
-        "http://localhost:5000/api/v1/interviews"
+        "https://ai-mock-interview-27ne.onrender.com/api/v1/interviews"
       );
 
       if (!response.ok) {
@@ -159,7 +159,7 @@ const handleAuthSubmit = async (
           };
 
     const response = await authFetch(
-      `http://localhost:5000/api/v1/auth/${endpoint}`,
+      `https://ai-mock-interview-27ne.onrender.com/api/v1/auth/${endpoint}`,
       {
         method: "POST",
         headers: {
@@ -227,7 +227,7 @@ if (resumeFile) {
 }
 
 const response = await authFetch(
-  "http://localhost:5000/api/v1/interviews",
+  "https://ai-mock-interview-27ne.onrender.com/api/v1/interviews",
   {
     method: "POST",
     body: formData,
@@ -265,7 +265,7 @@ const response = await authFetch(
 
     try {
       const response = await authFetch(
-        `http://localhost:5000/api/v1/interviews/${id}`,
+        `https://ai-mock-interview-27ne.onrender.com/api/v1/interviews/${id}`,
         {
           method: "DELETE",
         }
@@ -303,7 +303,7 @@ const handleUpdateInterview = async (
 
   try {
     const response = await authFetch(
-      `http://localhost:5000/api/v1/interviews/${editingId}`,
+      `https://ai-mock-interview-27ne.onrender.com/api/v1/interviews/${editingId}`,
       {
         method: "PATCH",
         headers: {
@@ -363,7 +363,7 @@ async function handleEvaluateAnswer() {
 
   try {
     const response = await authFetch(
-      `http://localhost:5000/api/v1/interviews/${activeInterview._id}/evaluate-answer`,
+      `https://ai-mock-interview-27ne.onrender.com/api/v1/interviews/${activeInterview._id}/evaluate-answer`,
       {
         method: "POST",
         headers: {
@@ -738,7 +738,7 @@ className="mt-4 rounded-lg bg-emerald-800 px-5 py-3 font-semibold text-white tra
   onClick={async () => {
     try {
       const response = await authFetch(
-        `http://localhost:5000/api/v1/interviews/${activeInterview?._id}`,
+        `https://ai-mock-interview-27ne.onrender.com/api/v1/interviews/${activeInterview?._id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -1313,7 +1313,7 @@ className={`rounded-md px-2.5 py-1 text-xs font-medium ${
 onClick={async () => {
   try {
     const attemptResponse = await authFetch(
-      `http://localhost:5000/api/v1/interviews/${interview._id}/start-attempt`,
+      `https://ai-mock-interview-27ne.onrender.com/api/v1/interviews/${interview._id}/start-attempt`,
       { method: "POST" }
     );
 
@@ -1328,7 +1328,7 @@ onClick={async () => {
     setActiveAttemptId(attemptResult.data.attemptId);
 
     const response = await authFetch(
-      `http://localhost:5000/api/v1/interviews/${interview._id}/generate-questions`,
+      `https://ai-mock-interview-27ne.onrender.com/api/v1/interviews/${interview._id}/generate-questions`,
       { method: "POST" }
     );
 
